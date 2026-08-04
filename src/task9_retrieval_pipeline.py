@@ -48,6 +48,7 @@ def retrieve(
     top_k: int = DEFAULT_TOP_K,
     score_threshold: float = SCORE_THRESHOLD,
     use_reranking: bool = True,
+    reranking_method: str = RERANK_METHOD,
 ) -> list[dict]:
     """
     Retrieval pipeline hoàn chỉnh với fallback logic.
@@ -68,6 +69,7 @@ def retrieve(
         top_k: Số lượng kết quả cuối cùng
         score_threshold: Ngưỡng điểm cosine gốc tối thiểu (KHÔNG phải điểm RRF)
         use_reranking: Có áp dụng reranking hay không
+        reranking_method: Phương pháp reranking ("rrf", "cross_encoder", "mmr")
 
     Returns:
         List of {
@@ -77,33 +79,53 @@ def retrieve(
             'source': str  # 'hybrid' hoặc 'pageindex'
         }
     """
-    # TODO: Implement full retrieval pipeline
-    #
     # Step 1: Song song chạy semantic + lexical
-    # dense_results = semantic_search(query, top_k=top_k * 2)
-    # sparse_results = lexical_search(query, top_k=top_k * 2)
-    #
+    dense_results = semantic_search(query, top_k=top_k * 2)
+    sparse_results = lexical_search(query, top_k=top_k * 2)
+
+    # Step 4 logic check before doing further steps:
+    # Check threshold DÙNG ĐIỂM COSINE GỐC (dense_results), KHÔNG PHẢI RRF
+    best_score = dense_results[0]["score"] if dense_results else 0.0
+    if best_score < score_threshold:
+        print(f"  ⚠ Semantic best score ({best_score:.3f}) < threshold ({score_threshold})")
+        fallback = pageindex_search(query, top_k=top_k)
+        if fallback:
+            for item in fallback:
+                item["source"] = "pageindex"
+            return fallback
+
     # Step 2: Merge bằng RRF
-    # merged = rerank_rrf([dense_results, sparse_results], top_k=top_k * 2)
-    # for item in merged:
-    #     item["source"] = "hybrid"
-    #
+    merged = rerank_rrf([dense_results, sparse_results], top_k=top_k * 2)
+    for item in merged:
+        item["source"] = "hybrid"
+
     # Step 3: Rerank
-    # if use_reranking and merged:
-    #     final_results = rerank(query, merged, top_k=top_k, method=RERANK_METHOD)
-    # else:
-    #     final_results = merged[:top_k]
-    #
-    # Step 4: Check threshold DÙNG ĐIỂM COSINE GỐC (dense_results), KHÔNG PHẢI RRF
-    # best_score = dense_results[0]["score"] if dense_results else 0.0
-    # if best_score < score_threshold:
-    #     print(f"  ⚠ Semantic best score ({best_score:.3f}) < threshold ({score_threshold})")
-    #     fallback = pageindex_search(query, top_k=top_k)
-    #     if fallback:
-    #         return fallback
-    #
-    # return final_results[:top_k]
-    raise NotImplementedError("Implement retrieve")
+    if use_reranking and merged:
+        query_embedding = None
+        if reranking_method == "mmr":
+            try:
+                from .task4_chunking_indexing import embed_texts
+                query_embedding = embed_texts([query])[0]
+                
+                # Fetch embeddings for candidates because MMR needs them
+                texts_to_embed = [c["content"] for c in merged]
+                candidate_embeddings = embed_texts(texts_to_embed)
+                for c, emb in zip(merged, candidate_embeddings):
+                    c["embedding"] = emb
+            except Exception as e:
+                print(f"  ⚠ Could not compute query embedding for MMR: {e}")
+                
+        final_results = rerank(
+            query=query, 
+            candidates=merged, 
+            top_k=top_k, 
+            method=reranking_method,
+            query_embedding=query_embedding
+        )
+    else:
+        final_results = merged[:top_k]
+
+    return final_results[:top_k]
 
 
 if __name__ == "__main__":

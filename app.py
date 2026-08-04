@@ -56,9 +56,22 @@ with st.sidebar:
     st.subheader("⚙️ Thiết lập")
     top_k = st.slider("Số chunks retrieval (top_k)", 3, 10, 5)
 
+    rerank_options = {
+        "RRF (Reciprocal Rank Fusion)": "rrf",
+        "MMR (Maximal Marginal Relevance)": "mmr",
+        "Cross-Encoder (Jina AI)": "cross_encoder"
+    }
+    selected_rerank = st.selectbox(
+        "Phương pháp Reranking",
+        options=list(rerank_options.keys()),
+        index=0,
+        help="Chọn thuật toán sắp xếp lại kết quả retrieval (RRF: mặc định không tốn API key, MMR: đa dạng thông tin, Cross-Encoder: chính xác cao)"
+    )
+    reranking_method = rerank_options[selected_rerank]
+
     st.divider()
     st.caption("**Kiến trúc hệ thống:**")
-    st.caption("Hybrid Retrieval (Semantic + BM25) → RRF Rerank → PageIndex Fallback → LLM Generation có Citation")
+    st.caption("Hybrid Retrieval (Semantic + BM25) → Rerank (" + selected_rerank + ") → PageIndex Fallback → LLM Generation có Citation")
 
 # =============================================================================
 # SESSION STATE
@@ -110,17 +123,11 @@ if query:
     with st.chat_message("assistant"):
         with st.spinner("Đang tìm kiếm tài liệu và tổng hợp câu trả lời..."):
             try:
-                # TODO (Học viên): Tích hợp hàm sinh câu trả lời từ Task 10
-                # Ví dụ:
-                # from src.task10_generation import generate_with_citation
-                # response = generate_with_citation(query, top_k=top_k)
-                # answer = response["answer"]
-                # sources = response.get("sources", [])
-
                 from src.task10_generation import generate_with_citation
-                response = generate_with_citation(query, top_k=top_k)
+                response = generate_with_citation(query, top_k=top_k, reranking_method=reranking_method)
                 answer = response.get("answer", "Chưa thể trả lời.")
                 sources = response.get("sources", [])
+
 
             except NotImplementedError:
                 answer = "⚠️ **Task 10 chưa được implement.** Hãy hoàn thành `src/task10_generation.py` để kết nối pipeline vào UI!"
