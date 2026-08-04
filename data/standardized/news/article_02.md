@@ -1,0 +1,24 @@
+# [Đăng bán sản phẩm] Quy định về danh mục sản phẩm bị cấm hoặc hạn chế mua bán trên Shopee
+
+**Source:** https://help.shopee.vn/portal/4/article/77242
+**Crawled:** 2026-08-04T15:18:13.127062
+
+---
+
+## 1. Danh mục sản phẩm bị cấm đăng bán tuyệt đối
+Để đảm bảo môi trường kinh doanh lành mạnh và tuân thủ quy định pháp luật Việt Nam, Shopee nghiêm cấm đăng bán các sản phẩm sau:
+- Hàng giả, hàng nhái, hàng vi phạm quyền sở hữu trí tuệ của các thương hiệu đã bảo hộ.
+- Vũ khí, công cụ hỗ trợ, chất cháy nổ, chất độc hại và hàng hóa nguy hiểm.
+- Thuốc lá điện tử, tinh dầu vape, thuốc lá truyền thống và các sản phẩm liên quan.
+- Thuốc kê đơn, thực phẩm chức năng không rõ nguồn gốc xuất xứ hoặc chưa được cấp phép lưu hành.
+- Động vật hoang dã, bộ phận động vật quý hiếm và sản phẩm từ động vật bị cấm săn bắt.
+- Các nội dung văn hóa phẩm dâm ô, đồi trụy hoặc vi phạm thuần phong mỹ tục.
+
+## 2. Quy định xử lý vi phạm đối với Người bán
+Khi phát hiện Người bán đăng tải sản phẩm thuộc danh mục cấm:
+- **Lần 1**: Khóa sản phẩm vi phạm và gửi thông báo nhắc nhở Người bán qua Kênh Người Bán.
+- **Lần 2**: Xóa sản phẩm vi phạm và cộng **01 đến 02 điểm phạt Sao Quả Tạ (Penalty)**.
+- **Tái phạm nhiều lần**: Tạm khóa tài khoản Người bán 14 ngày hoặc khóa vĩnh viễn tùy theo mức độ nghiêm trọng.
+
+## 3. Hướng dẫn Người bán kiểm tra sản phẩm trước khi đăng
+Người bán nên truy cập Kênh Người Bán -> Trung tâm Giúp Đỡ -> Quy định Đăng Bán để tham khảo danh sách chi tiết các từ khóa cấm (Forbidden Keywords) và tiêu chuẩn hình ảnh trước khi tải sản phẩm lên gian hàng.
