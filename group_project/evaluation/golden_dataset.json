@@ -1,17 +1,157 @@
 [
   {
-    "question": "Người mua có thể yêu cầu trả hàng/hoàn tiền trong thời hạn bao lâu sau khi nhận hàng?",
-    "expected_answer": "Trong vòng 15 ngày kể từ khi giao hàng thành công (24 giờ đối với thực phẩm tươi sống/đông lạnh).",
-    "expected_context": "Trang Returns and Refunds Policy, mục Return/Refund Eligibility"
+    "question": "Shopee hiện hỗ trợ bao nhiêu hình thức thanh toán chính thức?",
+    "expected_answer": "Shopee Việt Nam hỗ trợ 09 hình thức thanh toán chính thức.",
+    "expected_context": "Phương Thức Thanh Toán Shopee, đoạn mở đầu"
   },
   {
-    "question": "Shopee hỗ trợ những phương thức thanh toán nào?",
-    "expected_answer": "ShopeePay Wallet, thẻ tín dụng/ghi nợ, trả góp qua thẻ, QR Code, chuyển khoản qua app ngân hàng, thẻ NAPAS, Apple Pay, Google Pay, và COD.",
-    "expected_context": "Trang Payment Methods Overview"
+    "question": "Ví ShopeePay là gì và cách sử dụng như thế nào?",
+    "expected_answer": "Ví ShopeePay là ví điện tử tích hợp trong Ứng dụng Shopee; sau khi kích hoạt tài khoản và nạp đủ số dư, người dùng có thể dùng để thanh toán nhanh chóng các đơn hàng trên Shopee.",
+    "expected_context": "Phương Thức Thanh Toán Shopee, mục 1. Ví ShopeePay"
   },
   {
-    "question": "Người bán không được đăng bán những sản phẩm nào?",
-    "expected_answer": "Hàng giả/nhái, sản phẩm bất hợp pháp, vi phạm sở hữu trí tuệ, và các mặt hàng nằm trong danh sách cấm của sàn.",
-    "expected_context": "Trang Product Listing Regulations, mục Prohibited Content"
+    "question": "Thanh toán bằng thẻ tín dụng/ghi nợ trên Shopee áp dụng cho đơn hàng có giá trị tối thiểu bao nhiêu?",
+    "expected_answer": "Chỉ áp dụng cho đơn hàng có giá trị thanh toán cuối cùng từ 10.000 VNĐ trở lên, hỗ trợ các hệ thống thẻ Visa, Mastercard, JCB và American Express (AMEX).",
+    "expected_context": "Phương Thức Thanh Toán Shopee, mục 2. Thẻ Tín dụng / Ghi nợ"
+  },
+  {
+    "question": "Trả góp bằng thẻ tín dụng 0% trên Shopee có áp dụng cho đơn hàng giao từ quốc tế không?",
+    "expected_answer": "Không, hình thức trả góp 0% qua thẻ tín dụng liên kết với ngân hàng đối tác không áp dụng cho đơn hàng giao từ quốc tế.",
+    "expected_context": "Phương Thức Thanh Toán Shopee, mục 3. Trả góp bằng Thẻ tín dụng"
+  },
+  {
+    "question": "SPayLater là gì và hỗ trợ những kỳ hạn trả góp nào?",
+    "expected_answer": "SPayLater là phương thức mua trước trả sau do ngân hàng đối tác cung cấp, cấp hạn mức thanh toán trả dần theo các kỳ hạn 1, 3, 6 hoặc 12 tháng.",
+    "expected_context": "Phương Thức Thanh Toán Shopee, mục 8. SPayLater"
+  },
+  {
+    "question": "Người mua có thể thanh toán khi nhận hàng (COD) cho tất cả các shop trên Shopee không?",
+    "expected_answer": "Không hẳn, một số Shop hoặc sản phẩm đặc thù có thể không mở phương thức thanh toán COD.",
+    "expected_context": "Phương Thức Thanh Toán Shopee, mục 7. Thanh toán khi nhận hàng (COD)"
+  },
+  {
+    "question": "Shopee thu thập những loại dữ liệu cá nhân nào của người dùng?",
+    "expected_answer": "Tên, số điện thoại, địa chỉ nhận hàng, địa chỉ email, thông tin thanh toán và lịch sử giao dịch, được thu thập khi đăng ký tài khoản, sử dụng dịch vụ, đặt hàng hoặc liên hệ hỗ trợ khách hàng.",
+    "expected_context": "Chính Sách Bảo Mật Thông Tin Shopee, mục 1. Thu Thập Dữ Liệu Cá Nhân"
+  },
+  {
+    "question": "Shopee sử dụng dữ liệu cá nhân của người dùng với những mục đích gì?",
+    "expected_answer": "Xử lý đơn hàng/thanh toán/giao nhận, hỗ trợ khách hàng và giải quyết khiếu nại/trả hàng hoàn tiền, cải thiện trải nghiệm và ngăn chặn gian lận, gửi thông báo trạng thái đơn hàng và khuyến mãi nếu người dùng đăng ký.",
+    "expected_context": "Chính Sách Bảo Mật Thông Tin Shopee, mục 2. Mục Đích Sử Dụng Thông Tin"
+  },
+  {
+    "question": "Shopee áp dụng những biện pháp bảo mật kỹ thuật nào để bảo vệ dữ liệu cá nhân?",
+    "expected_answer": "Shopee áp dụng mã hóa SSL/TLS, tường lửa và kiểm soát truy cập phân quyền để bảo vệ dữ liệu cá nhân khỏi truy cập, sử dụng hoặc tiết lộ trái phép.",
+    "expected_context": "Chính Sách Bảo Mật Thông Tin Shopee, mục 3. Bảo Vệ và Lưu Trữ Dữ Liệu"
+  },
+  {
+    "question": "Shopee có bán hoặc chia sẻ dữ liệu cá nhân của người dùng cho bên thứ ba không?",
+    "expected_answer": "Shopee không bán hoặc cho thuê dữ liệu cá nhân; chỉ chia sẻ cho các bên liên quan trực tiếp đến thực hiện đơn hàng (đơn vị vận chuyển, ngân hàng thanh toán) hoặc theo yêu cầu của cơ quan nhà nước có thẩm quyền.",
+    "expected_context": "Chính Sách Bảo Mật Thông Tin Shopee, mục 4. Chia Sẻ Thông Tin Với Bên Thứ Ba"
+  },
+  {
+    "question": "Người dùng có những quyền gì đối với dữ liệu cá nhân của mình trên Shopee?",
+    "expected_answer": "Người dùng có quyền truy cập, chỉnh sửa, cập nhật thông tin cá nhân hoặc yêu cầu xóa tài khoản/dữ liệu cá nhân qua ứng dụng Shopee hoặc liên hệ Bộ phận Chăm sóc Khách hàng.",
+    "expected_context": "Chính Sách Bảo Mật Thông Tin Shopee, mục 5. Quyền Của Người Dùng"
+  },
+  {
+    "question": "Người mua có thể yêu cầu trả hàng/hoàn tiền trong thời hạn bao lâu sau khi đơn hàng giao thành công?",
+    "expected_answer": "Người mua có thể gửi yêu cầu trả hàng/hoàn tiền trong vòng 15 (mười lăm) ngày kể từ lúc đơn hàng được cập nhật giao hàng thành công.",
+    "expected_context": "Chính Sách Trả Hàng và Hoàn Tiền Shopee, mục 3.2 Thời hạn gửi yêu cầu"
+  },
+  {
+    "question": "Người mua được quyền yêu cầu trả hàng/hoàn tiền trong những trường hợp nào?",
+    "expected_answer": "Không nhận được sản phẩm hoặc không nhận đủ sản phẩm đã đặt, nhận hàng giả/hàng nhái, sản phẩm bị lỗi/hư hại trong vận chuyển, người bán giao sai sản phẩm, sản phẩm khác biệt rõ rệt so với mô tả, sản phẩm hết hạn sử dụng, hoặc người bán tự thỏa thuận đồng ý cho trả hàng.",
+    "expected_context": "Chính Sách Trả Hàng và Hoàn Tiền Shopee, mục 3.1 Điều Kiện Yêu Cầu Trả Hàng/Hoàn Tiền"
+  },
+  {
+    "question": "Đối với đơn hàng thanh toán COD, người mua cần đáp ứng điều kiện gì để nhận hoàn tiền?",
+    "expected_answer": "Đối với đơn hàng COD hoặc chuyển khoản ngân hàng, tài khoản Shopee phải được liên kết với phương thức nhận hoàn tiền hợp lệ như Ví ShopeePay hoặc tài khoản ngân hàng.",
+    "expected_context": "Chính Sách Trả Hàng và Hoàn Tiền Shopee, mục 3.3 Phương thức nhận hoàn tiền"
+  },
+  {
+    "question": "Người bán có bao nhiêu ngày để phản hồi khi nhận được yêu cầu trả hàng/hoàn tiền từ Shopee, và điều gì xảy ra nếu không phản hồi?",
+    "expected_answer": "Người bán cần phản hồi trong vòng 02 ngày lịch kể từ ngày nhận thông báo; nếu quá hạn mà không phản hồi, Shopee sẽ hiểu rằng Người Bán đồng ý với yêu cầu của Người Mua.",
+    "expected_context": "Chính Sách Trả Hàng và Hoàn Tiền Shopee, mục 4. Quyền và Nghĩa Vụ Của Người Bán"
+  },
+  {
+    "question": "Chính sách Trả Hàng và Hoàn Tiền của Shopee áp dụng cho những đối tượng nào?",
+    "expected_answer": "Áp dụng đối với Người Mua, Người Bán, các đơn vị cung cấp dịch vụ vận chuyển, nhân viên giao nhận (shipper) và các bên khác có liên quan trên Sàn Shopee.",
+    "expected_context": "Chính Sách Trả Hàng và Hoàn Tiền Shopee, mục 1.1 Đối Tượng Áp Dụng"
+  },
+  {
+    "question": "Thời Gian Shopee Đảm Bảo có mục đích gì?",
+    "expected_answer": "Đây là khoảng thời gian Shopee thực hiện, theo yêu cầu của Người Dùng, để hỗ trợ giải quyết các xung đột, tranh chấp, khiếu nại có thể phát sinh trong quá trình giao dịch trên Sàn Shopee.",
+    "expected_context": "Chính Sách Trả Hàng và Hoàn Tiền Shopee, mục 2.2"
+  },
+  {
+    "question": "Làm thế nào để kiểm tra hành trình đơn hàng trên Ứng dụng Shopee?",
+    "expected_answer": "Mở ứng dụng Shopee, chọn mục Tôi ở góc dưới cùng bên phải, chọn Đang giao trong phần Đơn mua, sau đó chọn đơn hàng muốn kiểm tra để xem chi tiết đơn vị vận chuyển, mã vận đơn và các mốc thời gian cập nhật hành trình.",
+    "expected_context": "[Theo dõi đơn hàng] Hướng dẫn kiểm tra hành trình và trạng thái đơn hàng trên Shopee, mục 1"
+  },
+  {
+    "question": "Trạng thái 'Chờ lấy hàng' trên đơn hàng Shopee có nghĩa là gì?",
+    "expected_answer": "Người bán đang đóng gói và chờ đơn vị vận chuyển đến lấy hàng hoặc mang ra bưu cục.",
+    "expected_context": "[Theo dõi đơn hàng] Hướng dẫn kiểm tra hành trình và trạng thái đơn hàng trên Shopee, mục 2. Ý nghĩa các trạng thái đơn hàng"
+  },
+  {
+    "question": "Nếu đơn hàng bị giao chậm hơn dự kiến nhưng vẫn ở trạng thái 'Đang giao', người mua có thể làm gì?",
+    "expected_answer": "Người mua có thể liên hệ trực tiếp với nhân viên giao hàng (shipper) qua số điện thoại trong chi tiết vận chuyển, bấm nút Gia hạn Shopee Đảm Bảo để kéo dài thời gian xác nhận nhận hàng thêm 03 ngày, hoặc chat với Bộ phận Chăm sóc Khách hàng Shopee để được hỗ trợ kiểm tra vị trí bưu kiện.",
+    "expected_context": "[Theo dõi đơn hàng] Hướng dẫn kiểm tra hành trình và trạng thái đơn hàng trên Shopee, mục 3"
+  },
+  {
+    "question": "Người bán trên Shopee bị cấm đăng bán những danh mục sản phẩm nào?",
+    "expected_answer": "Hàng giả/hàng nhái/vi phạm sở hữu trí tuệ; vũ khí, công cụ hỗ trợ, chất cháy nổ, chất độc hại và hàng hóa nguy hiểm; thuốc lá điện tử, tinh dầu vape, thuốc lá truyền thống; thuốc kê đơn, thực phẩm chức năng không rõ nguồn gốc hoặc chưa được cấp phép; động vật hoang dã và bộ phận động vật quý hiếm; nội dung văn hóa phẩm đồi trụy vi phạm thuần phong mỹ tục.",
+    "expected_context": "[Đăng bán sản phẩm] Quy định về danh mục sản phẩm bị cấm hoặc hạn chế mua bán trên Shopee, mục 1"
+  },
+  {
+    "question": "Người bán bị xử lý như thế nào nếu tái phạm nhiều lần việc đăng bán sản phẩm thuộc danh mục cấm?",
+    "expected_answer": "Tài khoản Người bán sẽ bị tạm khóa 14 ngày hoặc khóa vĩnh viễn tùy theo mức độ nghiêm trọng.",
+    "expected_context": "[Đăng bán sản phẩm] Quy định về danh mục sản phẩm bị cấm hoặc hạn chế mua bán trên Shopee, mục 2. Quy định xử lý vi phạm đối với Người bán"
+  },
+  {
+    "question": "Lần đầu tiên Người bán đăng sản phẩm thuộc danh mục cấm thì bị xử lý ra sao?",
+    "expected_answer": "Sản phẩm vi phạm bị khóa và Shopee gửi thông báo nhắc nhở Người bán qua Kênh Người Bán.",
+    "expected_context": "[Đăng bán sản phẩm] Quy định về danh mục sản phẩm bị cấm hoặc hạn chế mua bán trên Shopee, mục 2. Quy định xử lý vi phạm đối với Người bán"
+  },
+  {
+    "question": "Shopee có những loại Mã Giảm Giá (voucher) nào?",
+    "expected_answer": "Mã Miễn Phí Vận Chuyển (Freeship Voucher), Mã Giảm Giá Từ Shopee (Shopee Voucher, theo số tiền cố định hoặc phần trăm), Mã Giảm Giá Từ Shop (Shop Voucher, chỉ áp dụng cho sản phẩm của shop phát hành), và Mã Hoàn Xu (Coin Cashback Voucher).",
+    "expected_context": "[Voucher Shopee] Hướng dẫn sử dụng và quy định kết hợp Mã Giảm Giá khi thanh toán, mục 1"
+  },
+  {
+    "question": "Người mua được áp dụng tối đa bao nhiêu loại Mã Giảm Giá trong cùng một đơn hàng, và gồm những loại nào?",
+    "expected_answer": "Tối đa 03 loại mã trong cùng một bước thanh toán: 01 Mã Miễn Phí Vận Chuyển, 01 Mã Giảm Giá từ Shopee (hoặc Mã Hoàn Xu), và 01 Mã Giảm Giá từ Shop.",
+    "expected_context": "[Voucher Shopee] Hướng dẫn sử dụng và quy định kết hợp Mã Giảm Giá khi thanh toán, mục 2. Quy tắc áp dụng đồng thời nhiều Voucher trong 1 đơn hàng"
+  },
+  {
+    "question": "Nếu đơn hàng bị hủy trước khi giao, các Mã Giảm Giá do Shopee phát hành có được hoàn lại không?",
+    "expected_answer": "Có, nếu đơn hàng bị hủy bởi Người mua hoặc Người bán trước khi giao hàng, các Mã Giảm Giá do Shopee phát hành sẽ được tự động hoàn lại vào Ví Voucher của Người mua trong vòng 1-3 giờ, với điều kiện mã đó vẫn còn lượt sử dụng và còn hạn.",
+    "expected_context": "[Voucher Shopee] Hướng dẫn sử dụng và quy định kết hợp Mã Giảm Giá khi thanh toán, mục 3. Những lưu ý quan trọng khi dùng Mã Giảm Giá"
+  },
+  {
+    "question": "Chính sách đổi trả và hoàn tiền của Shopee Mall có gì khác biệt so với shop thường?",
+    "expected_answer": "Shopee Mall cho thời gian trả hàng lên đến 15 ngày (so với 7-15 ngày của shop thường), cam kết hoàn tiền 200% nếu phát hiện hàng giả/hàng nhái, và miễn phí vận chuyển đổi trả hàng (Shopee hỗ trợ 100% phí ship hoàn trả khi yêu cầu hợp lệ).",
+    "expected_context": "[Shopee Mall] Chính sách Đổi trả và Hoàn tiền 100% chính hãng áp dụng riêng cho Shopee Mall, mục 1. Quyền lợi đặc quyền khi mua hàng Shopee Mall"
+  },
+  {
+    "question": "Thời gian hoàn tiền cho đơn hàng Shopee Mall trả hàng thành công là bao lâu?",
+    "expected_answer": "Tiền được hoàn trả về Ví ShopeePay trong 24h, hoặc về Thẻ tín dụng/ngân hàng trong khoảng 3-7 ngày làm việc.",
+    "expected_context": "[Shopee Mall] Chính sách Đổi trả và Hoàn tiền 100% chính hãng áp dụng riêng cho Shopee Mall, mục 3. Quy trình xử lý và thời hạn hoàn tiền"
+  },
+  {
+    "question": "Gian hàng Shopee Mall có bao nhiêu ngày làm việc để kiểm tra sản phẩm hoàn về?",
+    "expected_answer": "Gian hàng Shopee Mall có 02 ngày làm việc để kiểm tra sản phẩm hoàn về sau khi bưu tá thu hồi hàng hoàn.",
+    "expected_context": "[Shopee Mall] Chính sách Đổi trả và Hoàn tiền 100% chính hãng áp dụng riêng cho Shopee Mall, mục 3. Quy trình xử lý và thời hạn hoàn tiền"
+  },
+  {
+    "question": "Video mở gói hàng (unboxing video) hợp lệ để làm bằng chứng khiếu nại cần đáp ứng những tiêu chuẩn gì?",
+    "expected_answer": "Video phải liên tục, không bị cắt ghép/chỉnh sửa/tạm dừng; quay rõ mã vận đơn (waybill) trên bao bì trước khi bóc; quay 6 mặt của gói hàng để chứng minh chưa bị bóc mở trước đó; và quay rõ thao tác tháo niêm phong cùng chi tiết sản phẩm hư hỏng, trầy xước hoặc giao thiếu.",
+    "expected_context": "[Khiếu nại & Bằng chứng] Hướng dẫn quay video mở gói hàng và cung cấp bằng chứng Trả hàng/Hoàn tiền, mục 2. Tiêu chuẩn của một Video bằng chứng hợp lệ"
+  },
+  {
+    "question": "Khi gửi yêu cầu Trả hàng/Hoàn tiền, người mua được tải lên tối đa bao nhiêu hình ảnh và dung lượng video clip tối đa là bao nhiêu?",
+    "expected_answer": "Tối đa 05 hình ảnh sắc nét và 01 video clip với dung lượng tối đa 100MB thể hiện rõ quá trình bóc hàng hoặc lỗi hoạt động của sản phẩm.",
+    "expected_context": "[Khiếu nại & Bằng chứng] Hướng dẫn quay video mở gói hàng và cung cấp bằng chứng Trả hàng/Hoàn tiền, mục 3. Hướng dẫn tải bằng chứng lên ứng dụng khi gửi yêu cầu"
   }
 ]
